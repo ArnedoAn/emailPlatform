@@ -28,7 +28,7 @@ def sendMail():
         message = str(jsonData['message'])
         emailTo = str(jsonData['to'])
         setConfig(email,password)
-        msg = Message('TIENES UN MENSAJE!', sender='aarnedoe@uninorte.edu.co', recipients=[emailTo])
+        msg = Message('TIENES UN MENSAJE!', sender=email, recipients=[emailTo])
         msg.body=f"El mensaje enviado por {email} es: {message}"
         mail.send(msg)
         return "<h1>Enviado!</h1>"
