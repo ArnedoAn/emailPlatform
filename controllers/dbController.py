@@ -23,7 +23,7 @@ def registerUser(data):
     cursor = connection.cursor()
     try:
         cursor.execute("INSERT INTO usuario(nombreUsuario,email,password,estado) VALUES (?, ?, ?, ?)",
-                       [data.username, data.email, data.password, "no activado"])
+            [data.username, data.email, data.password, "no activado"])
         connection.commit()
         connection.close()
         return True
@@ -77,6 +77,22 @@ def changePassword(data):
     try:
         cursor.execute("UPDATE usuario SET password = ? WHERE email = ?", 
             [data.password, data.email])
+        connection.commit()
+        connection.close()
+        return True
+    except Exception as ex:
+        connection.rollback()
+        connection.close()
+        print(ex)
+        return False
+
+
+def activation(data):
+    connection = init_db()
+    cursor = connection.cursor()
+    try:
+        cursor.execute("UPDATE usuario SET status = ? WHERE email = ? AND token = ?", 
+            ['activado', data.email, data.cod])
         connection.commit()
         connection.close()
         return True
