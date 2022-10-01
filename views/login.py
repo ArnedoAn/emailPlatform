@@ -16,4 +16,11 @@ def loginPost():
         session["logged"] = True
         return "Inicio de sesión exitoso!"
     else:
-        return "Error de autenticación!"         
+        return "Error de autenticación!"    
+
+
+@login.post('/logout')
+def logout_user():
+    session.pop("user",None)
+    session.pop("logged", None)
+    return "Sesión cerrada!"             

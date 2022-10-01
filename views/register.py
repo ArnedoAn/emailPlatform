@@ -1,6 +1,8 @@
-from flask import Blueprint, request
-from controllers.dbController import insert
+from flask import Blueprint, request, redirect
+from controllers.dbController import registerUser
 from controllers.pwdController import makePwd
+from views.send import sendActivation
+import secrets
 
 register = Blueprint('register', __name__, template_folder='templates')
 
@@ -9,17 +11,19 @@ def registerForm():
     return 'Form'
 
 @register.post('/register')
-def registerUser():
-    email = request.form['email']
-    name = request.form['name']
+def register_User():
+    data= {}
+    data.email = request.form['email']
+    data.username = request.form['name']
+    data.token = secrets.token_urlsafe()
     pwd = request.form['pwd']
-    pwd = makePwd(pwd)
-    if(insert([email,name,pwd])):
-        return 'Registrado!'
+    data.password = makePwd(pwd)
+    if(registerUser(data)):
+        if(sendActivation(data.email,data.token)):
+            return 'Link de activación enviado!'
     else:
-        return 'Error al registrar!'
+        return 'Template de mal registro'
 
-
-############### COMPLETAR ##############        
+    
 
 
