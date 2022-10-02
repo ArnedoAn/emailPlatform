@@ -1,7 +1,7 @@
 from flask import Blueprint, request, redirect
 from controllers.dbController import registerUser
 from controllers.pwdController import makePwd
-from views.send import sendActivation
+from controllers.emailController import sendActivation
 import secrets
 
 register = Blueprint('register', __name__, template_folder='templates')
@@ -21,6 +21,8 @@ def register_User():
     if(registerUser(data)):
         if(sendActivation(data.email,data.token)):
             return 'Link de activación enviado!'
+        else:
+            return "Error al enviar link de activación"    
     else:
         return 'Template de mal registro'
 

@@ -50,7 +50,7 @@ def login(data):
 def inbox(data):
     connection = init_db()
     cursor = connection.cursor()
-    cursor.execute("SELECT * FROM mensaje WHERE to_User = ?", [data.email])
+    cursor.execute("SELECT * FROM mensaje WHERE to_User = ?", [data])
     return cursor.fetchall
 
 
