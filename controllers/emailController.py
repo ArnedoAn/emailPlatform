@@ -5,27 +5,32 @@ from controllers.dbController import getSenderParams
 app = Flask(__name__)
 mail = Mail(app)
 
+params = getSenderParams('4nDr3z.uninorte')
+email = str(params[0])
+pwd = str(params[1])
+print(email, pwd)
 # Parametros para el funcionamiento del modulo SMTP
 app.config['MAIL_SERVER'] = 'smtp-mail.outlook.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
+app.config['MAIL_USERNAME'] = email
+app.config['MAIL_PASSWORD'] = pwd
+
+mail = Mail(app)
 
 
-def setConfig(email, pwd):
-    app.config['MAIL_USERNAME'] = email
-    app.config['MAIL_PASSWORD'] = pwd
-    mail = Mail(app)
 
 
-params = getSenderParams('12345')
-if(params!=False):  
-    email = params.email
-    setConfig(params.email,params.password)
-else:
-    print("ERROR DE PARAMETROS DE SMTP")    
+# def setParams():
+    
+#     if(params!=False):
+#         setConfig(str(params[0]),str(params[1]))
+#     else:
+#         print("ERROR DE PARAMETROS DE SMTP")    
 
 def sendActivation(emailTo, cod):
+    #setParams()
     host = "http://127.0.0.1:5000"
     link = host + f"/activate?email={emailTo}&cod={cod}"
     try:
@@ -39,6 +44,7 @@ def sendActivation(emailTo, cod):
 
 
 def sendReset(emailTo):
+    #setParams()
     host = "http://127.0.0.1:5000"
     link = host + f"/change?email={emailTo}"
     try:

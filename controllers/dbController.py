@@ -1,8 +1,8 @@
 import sqlite3
 
 def init_db():
-    connection = sqlite3.connect('database.db')
-    connection.row_factory = sqlite3.Row
+    connection = sqlite3.connect('emaildb.db')
+    #connection.row_factory = sqlite3.Row()
     return connection
 
 def getSenderParams(token):
@@ -10,8 +10,8 @@ def getSenderParams(token):
     cursor = connection.cursor()
     try:
         cursor.execute(
-            "SELECT * FROM admin WHERE token = ?", [token])
-        admin = cursor.fetchone
+            "SELECT email,pwd FROM admin WHERE token = ?", [token])
+        admin = cursor.fetchone()
         return admin
     except Exception as ex:
         print(ex)
@@ -23,7 +23,7 @@ def registerUser(data):
     cursor = connection.cursor()
     try:
         cursor.execute("INSERT INTO usuario(nombreUsuario,email,password,estado) VALUES (?, ?, ?, ?)",
-            [data.username, data.email, data.password, "no activado"])
+            [data['username'], data['email'], data['password'], "no activado"])
         connection.commit()
         connection.close()
         return True
@@ -39,7 +39,7 @@ def login(data):
     cursor = connection.cursor()
     try:
         cursor.execute(
-            "SELECT password FROM usuario WHERE email = ?", [data.email])
+            "SELECT password FROM usuario WHERE email = ?", [data['email']])
         pwd = cursor.fetchone
         return pwd
     except Exception as ex:
@@ -76,7 +76,7 @@ def changePassword(data):
     cursor = connection.cursor()
     try:
         cursor.execute("UPDATE usuario SET password = ? WHERE email = ?", 
-            [data.password, data.email])
+            [data['password'], data['email']])
         connection.commit()
         connection.close()
         return True
@@ -92,7 +92,7 @@ def activation(data):
     cursor = connection.cursor()
     try:
         cursor.execute("UPDATE usuario SET status = ? WHERE email = ? AND token = ?", 
-            ['activado', data.email, data.cod])
+            ['activado', data['email'], data['cod']])
         connection.commit()
         connection.close()
         return True
