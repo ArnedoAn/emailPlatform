@@ -7,7 +7,6 @@ from views.reset import reset
 from views.messages import messages
 
 app = Flask(__name__)
-app.app_context()
 
 app.register_blueprint(send)
 app.register_blueprint(login)
