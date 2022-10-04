@@ -40,7 +40,7 @@ def login(data):
     try:
         cursor.execute(
             "SELECT password FROM usuario WHERE email = ?", [data['email']])
-        pwd = cursor.fetchone
+        pwd = cursor.fetchone()
         return pwd
     except Exception as ex:
         print(ex)

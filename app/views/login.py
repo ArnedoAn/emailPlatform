@@ -9,8 +9,11 @@ def loginForm():
 
 @login.post('/login')
 def loginPost():
-    email = request.form["email"]
-    pwd = request.form["pwd"]
+    jsond = request.get_json()
+    email = str(jsond["email"])
+    pwd = str(jsond["password"])
+    # email = request.form["email"]
+    # pwd = request.form["pwd"]
     if(validatePwd(email,pwd)):
         session["user"] = email
         return "Inicio de sesión exitoso!"

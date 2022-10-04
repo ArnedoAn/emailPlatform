@@ -1,14 +1,14 @@
-from flask import Flask
 from app.controllers.dbController import login
-from flask_bcrypt import Bcrypt
-
-app = Flask(__name__)
-
-bcrypt = Bcrypt(app)
+from werkzeug.security import generate_password_hash, check_password_hash
 
 def makePwd(pwd):
-    return bcrypt.generate_password_hash(pwd)
+    return generate_password_hash(pwd)
 
 def validatePwd(user,pwd):
-    bdPwd = login(user)
-    return bcrypt.check_password_hash(bdPwd,pwd)    
+    data = {"email":user}
+    bdPwd = login(data)
+    if bdPwd != False:
+        return check_password_hash(bdPwd[0],pwd)
+    else:
+        print("Error en validar contraseña")
+        return False        
