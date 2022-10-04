@@ -1,34 +1,12 @@
-from flask import Flask
-from flask_mail import Mail, Message
-from controllers.dbController import getSenderParams
-from .app import app
+from flask_mail import Message, Mail
+from flask import Flask, current_app
 
-#app = Flask(__name__)
-mail = Mail(app)
+app = Flask(__name__)
 
-# Parametros para el funcionamiento del modulo SMTP
-app.config['MAIL_SERVER'] = 'smtp-mail.outlook.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USE_SSL'] = False
-
-
-def setParams():
-    params = getSenderParams('4nDr3z.uninorte')
-    if(params != False):
-        setConfig(str(params[0]), str(params[1]))
-    else:
-        print("ERROR DE PARAMETROS DE SMTP")
-
-
-def setConfig(email, pwd):
-    app.config['MAIL_USERNAME'] = email
-    app.config['MAIL_PASSWORD'] = pwd
-    mail = Mail(app)
-
+with app.app_context():
+    mail = Mail(current_app)
 
 def sendActivation(emailTo, cod):
-    setParams()
     host = "http://127.0.0.1:5000"
     link = host + f"/activate?email={emailTo}&cod={cod}"
     email = "aarnedoe@uninorte.edu.co"
@@ -43,7 +21,6 @@ def sendActivation(emailTo, cod):
 
 
 def sendReset(emailTo):
-    setParams()
     host = "http://127.0.0.1:5000"
     link = host + f"/change?email={emailTo}"
     email = "aarnedoe@uninorte.edu.co"

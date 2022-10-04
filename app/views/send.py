@@ -1,5 +1,5 @@
 from flask import Blueprint, request, session
-from controllers.dbController import sendMail
+from app.controllers.dbController import sendMail
 
 send = Blueprint('send',__name__,template_folder='templates')
 
@@ -7,7 +7,7 @@ send = Blueprint('send',__name__,template_folder='templates')
 def sendEmailUser():
     data = {}
     data["to_user"] = request.form["to_user"]
-    data["from_user"] = request.form["from_user"]
+    data["from_user"] = session['usuario']
     data["asunto"] = request.form["asunto"]
     data["cuerpo"] = request.form["cuerpo"]
     data["estado"] = request.form["estado"]

@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from controllers.dbController import changePassword
+from app.controllers.dbController import changePassword
 
 reset = Blueprint('reset', __name__, template_folder='templates')
 

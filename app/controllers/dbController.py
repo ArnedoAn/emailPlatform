@@ -1,7 +1,7 @@
 import sqlite3
 
 def init_db():
-    connection = sqlite3.connect('emaildb.db')
+    connection = sqlite3.connect('./app/emaildb.db')
     #connection.row_factory = sqlite3.Row()
     return connection
 

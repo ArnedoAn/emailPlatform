@@ -1,7 +1,7 @@
 from flask import Blueprint, request, redirect
-from controllers.dbController import registerUser
-from controllers.pwdController import makePwd
-from app.emailController import sendActivation
+from app.controllers.dbController import registerUser
+from app.controllers.pwdController import makePwd
+from app.controllers.emailController import sendActivation
 import secrets
 
 register = Blueprint('register', __name__, template_folder='templates')

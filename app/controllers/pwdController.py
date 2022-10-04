@@ -1,5 +1,5 @@
 from flask import Flask
-from controllers.dbController import login
+from app.controllers.dbController import login
 from flask_bcrypt import Bcrypt
 
 app = Flask(__name__)

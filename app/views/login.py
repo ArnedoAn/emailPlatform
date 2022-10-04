@@ -1,5 +1,5 @@
 from flask import Blueprint, request, render_template, session
-from controllers.pwdController import validatePwd
+from app.controllers.pwdController import validatePwd
 
 login = Blueprint('login',__name__, template_folder='templates')
 
