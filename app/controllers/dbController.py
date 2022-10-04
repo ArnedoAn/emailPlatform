@@ -22,8 +22,8 @@ def registerUser(data):
     connection = init_db()
     cursor = connection.cursor()
     try:
-        cursor.execute("INSERT INTO usuario(nombreUsuario,email,password,estado) VALUES (?, ?, ?, ?)",
-            [data['username'], data['email'], data['password'], "no activado"])
+        cursor.execute("INSERT INTO usuario(nombreUsuario,email,password,estado,token) VALUES (?, ?, ?, ?, ?)",
+            [data['username'], data['email'], data['password'], "no activado", data['token']])
         connection.commit()
         connection.close()
         return True
@@ -91,7 +91,7 @@ def activation(data):
     connection = init_db()
     cursor = connection.cursor()
     try:
-        cursor.execute("UPDATE usuario SET status = ? WHERE email = ? AND token = ?", 
+        cursor.execute("UPDATE usuario SET estado = ? WHERE email = ? AND token = ?", 
             ['activado', data['email'], data['cod']])
         connection.commit()
         connection.close()

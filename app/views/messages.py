@@ -5,9 +5,12 @@ messages = Blueprint('messages', __name__, template_folder='templates')
 
 @messages.get('/inbox')
 def inboxUser():
-    email = session["user"]
-    data = inbox(email)
-    if(data != None):
-        return "Plantilla", data
+    if "user" in session:
+        email = session["user"]
+        data = inbox(email)
+        if(data != None):
+            return "Plantilla", data
+        else:
+            return "Usuario invalido"
     else:
-        return "Usuario invalido"
+        return "Inicia sesión!"        

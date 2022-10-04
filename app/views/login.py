@@ -13,7 +13,6 @@ def loginPost():
     pwd = request.form["pwd"]
     if(validatePwd(email,pwd)):
         session["user"] = email
-        session["logged"] = True
         return "Inicio de sesión exitoso!"
     else:
         return "Error de autenticación!"    
@@ -21,6 +20,5 @@ def loginPost():
 
 @login.post('/logout')
 def logout_user():
-    session.pop("user",None)
-    session.pop("logged", None)
+    session.clear()
     return "Sesión cerrada!"             
