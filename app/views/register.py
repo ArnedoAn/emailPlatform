@@ -1,4 +1,4 @@
-from flask import Blueprint, request, redirect
+from flask import Blueprint, request, redirect, render_template
 from app.controllers.dbController import registerUser
 from app.controllers.pwdController import makePwd
 # from app.controllers.emailController import sendActivation
@@ -8,7 +8,7 @@ register = Blueprint('register', __name__, template_folder='templates')
 
 @register.get('/register')
 def registerForm():
-    return 'Form'
+    return render_template('register.html')
 
 #@register.post('/register')
 # def register_User():
