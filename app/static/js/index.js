@@ -1,9 +1,9 @@
 function registro(){
-    location.href = "registro"
+    location.href = "register"
 }
 
 function contraseña(){
-    location.href = "contraseña"
+    location.href = "reset"
 }
 
 function cambcontraseña(){

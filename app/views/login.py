@@ -5,7 +5,7 @@ login = Blueprint('login',__name__, template_folder='templates')
 
 @login.get('/login')
 def loginForm():
-    return 'Form'
+    return render_template('index.html')
 
 @login.post('/login')
 def loginPost():

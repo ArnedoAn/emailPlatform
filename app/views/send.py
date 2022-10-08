@@ -1,4 +1,4 @@
-from flask import Blueprint, request, session
+from flask import Blueprint, render_template, request, session
 from app.controllers.dbController import sendMail
 
 send = Blueprint('send',__name__,template_folder='templates')
@@ -19,3 +19,5 @@ def sendEmailUser():
             return "Error al enviar correo!"   
     else:
         return "Inicia sesión!"
+
+

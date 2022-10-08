@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, render_template, request
 from app.controllers.dbController import changePassword, login
 
 reset = Blueprint('reset', __name__, template_folder='templates')
@@ -6,7 +6,7 @@ reset = Blueprint('reset', __name__, template_folder='templates')
 
 @reset.get('/reset')
 def sendLink():
-    return "Formulario de email"
+    return render_template('auth/contraseña.html')
 
 
 @reset.get('/change')
@@ -14,7 +14,7 @@ def getLink():
     data = {}
     data["email"] = request.args.get('email')
     if(login(data) != False):
-        return "Formulario cambio de contraseña", data
+        return render_template('/auth/cambiocontraseña.html')
     else:
         return "Correo no registrado!"
 

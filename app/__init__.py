@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask_mail import Mail, Message
 from app.views.send import send
 from app.views.login import login
@@ -65,7 +65,7 @@ def sendReset(emailTo):
 
 @app.route("/")
 def home():
-    return "<h1>Welcome home</h1>"
+    return render_template('index.html')
 
 
 @app.route('/register', methods=["POST"])

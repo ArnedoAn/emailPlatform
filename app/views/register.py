@@ -8,7 +8,7 @@ register = Blueprint('register', __name__, template_folder='templates')
 
 @register.get('/register')
 def registerForm():
-    return render_template('register.html')
+    return render_template('/auth/registro.html')
 
 #@register.post('/register')
 # def register_User():
