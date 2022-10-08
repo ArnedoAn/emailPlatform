@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar contraseña</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+     rel="stylesheet" 
+     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous">  
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/iconocontraseña2.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styloscts.css')}}">           
+</head>
+<body>
+    <div class="container">
+        <div class="titulo">
+            <h3 class="nav_titulo">Recuperar Contraseña</h3>
+        </div>
+        <form >
+            <div class="contraseña">
+                <img class="img_contraseña" src="{{ url_for('static', filename='images/iconorecuperar.png')}}" alt=""><br>
+                <label class="nav_subtitulo" for="contraseñar">Escribe tu correo electronico</label><br><br>
+                <input class="nav_iptcorreo" type="email" id="contraseñar" placeholder="emailadress" ><br>
+                <input class="btn_recuperar" type="button" value="Recuperar"><br><br>
+                <a class="nav_Iniciosesion" onclick="iniciosesion()" href="#">Inicio Sesion</a><br>
+                <a class="nav_olvidocontraseña" onclick="registro()" href="#">Registro</a><br><br>               
+                <p class="nav_piepagina">Mensajeria Electronica</p>
+            </div>
+        </form> 
+    </div>
+<script src="{{ url_for('static', filename='js/index.js')}}"></script> 
+</body>
+</html>

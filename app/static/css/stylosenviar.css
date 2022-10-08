@@ -1,0 +1,116 @@
+body{
+    background-image: url(/static/images/backgraund.png);
+    background-size:cover;
+}
+
+.container{
+    height: 450px;
+    width: 370px;
+    margin-top: 70px;
+    border-top: 5px solid rgb(200, 255, 0);
+    border-left: 5px solid rgb(200, 255, 0);
+    border-right: 5px solid rgb(200, 255, 0);
+    border-bottom: 5px solid rgb(200, 255, 0);
+    border-radius: 60px;
+    background-color: #000000a5;
+}
+
+.nav_titulo{
+    text-align: center;
+    color: rgb(200, 255, 0);
+    font-weight: 700;
+}
+
+.nav_nuevomensaje{
+    
+    color: rgb(255, 255, 255);
+    font-size: 15pt;
+    font-weight: 700;
+}
+
+.nav_para{    
+    color: white;
+}
+
+.nav_asunto{
+    color: white;
+}
+
+.nav_mensaje{
+    color: white;
+}
+
+
+.ipt_para{
+    width: 200px;
+    color: black;
+    font-size: 12pt;
+    font-weight: 800;
+    background-color: rgba(200, 255, 0, 0.237);
+    border:1px solid rgb(149, 255, 0); 
+}    
+
+.ipt_asunto{
+    width: 200px;
+    color: black;
+    font-size: 12pt;
+    font-weight: 800;
+    background-color: rgba(200, 255, 0, 0.237);
+    border:1px solid rgb(149, 255, 0); 
+}  
+
+.nav_textarea{
+    color: black;
+    font-size: 12pt;
+    font-weight: 800;
+    background-color: rgba(200, 255, 0, 0.237);
+    border:1px solid rgb(149, 255, 0); 
+}    
+
+::placeholder{
+    font-size: 12pt;
+    color:rgb(0, 0, 0) ;
+}
+
+.btn_enviar{
+    margin-left: 0px;
+    margin-top: 10px;
+    display: inline-block;
+    padding: 5px 30px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;	
+    text-decoration: none;
+    outline: none;
+    color: rgb(21, 0, 255);
+    font-weight: 800;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px rgb(0, 0, 0);
+}
+
+.btn_enviar:hover {background-color: #8a8a8a}
+
+.btn_enviar:active {
+    background-color: #ffffff;
+    box-shadow: 0 5px rgb(64, 64, 64);
+    transform: translateY(4px);
+}
+
+.nav_cerrarsesion{
+    margin-left: 110px;
+}
+
+.nav_piepagina{
+    text-align: center;
+    color: rgb(200, 255, 0);
+    font-weight: 700;
+}
+.img_mensaje{
+    margin-left: 50px;
+}
+.nav_usuario{
+    margin-left: 185px;
+    color: white;
+}

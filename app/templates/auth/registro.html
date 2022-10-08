@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+     rel="stylesheet" 
+     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/iconoregistro.png')}}" type="image/x-icon">    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylosreg.css')}}"/>
+</head>
+<body>
+    <div class="container">
+        <div class="titulo">
+            <h2 class="nav_titulo">Registro</h2>            
+        </div>
+        <form action="/registro/save/" id="forregistro" name="formularioregistro" method="post"> 
+            <div class="registro">
+                <label class="nav_usuarior" for="usuarior">Nombre de usuario</label>
+                <img class="img_usuarior" src="{{ url_for('static', filename='images/iconoregistro.png')}}" alt="">
+                <input class="ipt_usuarior" type="text" id="usuarior" placeholder="User name"><br>
+                <label class="nav_correoelectronico" for="correoelectronico">Correo electronico</label>
+                <img class="img_correoelectronico" src="{{ url_for('static', filename='images/iconocorreo.png')}}" alt="">
+                <input class="ipt_correoelectronico" type="email" id="correoelectronico" placeholder="Email adress"><br>
+                <label class="nav_contraseña" for="Contraseña">Contraseña</label>
+                <img class="img_contraseña" src="{{ url_for('static', filename='images/iconocontraseña2.png')}}" alt=""><br>
+                <input class="ipt_contraseña" type="password" id="Contraseña" placeholder="Password"><br>
+                <input class="btn_registro" type="submit" value="Registrarse"><br><br>                               
+                <a class="nav_Iniciosesion" onclick="iniciosesion()" href="#">Inicio Sesion</a><br>
+                <a class="nav_olvidocontraseña" onclick="contraseña()" href="#">Olvidaste tu contraseña?</a><br><br>
+                <p class="nav_piepagina">Mensajeria Electronica</p>
+            </div>
+        </form>        
+    </div>
+<script src="{{ url_for('static', filename='js/index.js')}}"></script> 
+</body>
+</html>

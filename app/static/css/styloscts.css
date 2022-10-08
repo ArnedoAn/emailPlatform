@@ -1,0 +1,73 @@
+body{
+    background-image: url(/static/images/backgraund.png);
+    background-size:cover;    
+}
+
+.container{
+    height: 450px;
+    width: 370px;
+    text-align: center;
+    margin-top: 70px;
+    border-top: 5px solid rgb(200, 255, 0);
+    border-left: 5px solid rgb(200, 255, 0);
+    border-right: 5px solid rgb(200, 255, 0);
+    border-bottom: 5px solid rgb(200, 255, 0);
+    border-radius: 60px;
+    background-color: #000000a5;
+}
+
+h3{
+    margin-top: 30px;
+    color: rgb(200, 255, 0);
+    font-weight: 700;
+}
+
+.nav_subtitulo{
+    
+    color: rgb(255, 255, 255);
+    font-size: 13pt;
+    font-weight: 700;
+}
+
+.nav_iptcorreo{
+    color: black;
+    font-size: 12pt;
+    font-weight: 800;
+    background-color: rgba(200, 255, 0, 0.237);
+    border:1px solid rgb(149, 255, 0); 
+}
+
+::placeholder{
+    font-size: 12pt;
+    color:rgb(0, 0, 0) ;
+}
+
+.btn_recuperar{
+    margin-top: 10px;
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;	
+    text-decoration: none;
+    outline: none;
+    color: rgb(21, 0, 255);
+    font-weight: 800;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px rgb(0, 0, 0);
+}
+
+.btn_recuperar:hover {background-color: #8a8a8a}
+
+.btn_recuperar:active {
+    background-color: #ffffff;
+    box-shadow: 0 5px rgb(64, 64, 64);
+    transform: translateY(4px);
+}
+
+.nav_piepagina{
+    color: rgb(200, 255, 0);
+    font-weight: 700;
+}

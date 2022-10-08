@@ -1,0 +1,153 @@
+body{
+    background-image: url(/static/images/backgraund.png);
+    background-size:cover;
+    
+}
+.container{
+    height: 450px;
+    width: 370px;
+    text-align: center;
+    margin-top: 70px;
+    border-top: 5px solid rgb(200, 255, 0);
+    border-left: 5px solid rgb(200, 255, 0);
+    border-right: 5px solid rgb(200, 255, 0);
+    border-bottom: 5px solid rgb(200, 255, 0);
+    border-radius: 60px;
+    background-color: #000000a5;
+}
+
+.nav_titulo{
+    color: rgb(200, 255, 0);
+    font-weight: 700;
+}
+
+.inicioSesion{
+    margin-top: 20px;
+}
+
+.nav_usuario{
+    margin-left:-30px;
+    color: rgb(255, 255, 255);
+    font-size: 16pt;
+    font-weight: 900;
+}
+.img_usuario{
+    margin-top: -15px;
+    margin-left: 70px;
+}
+
+.nav_iptusuario{
+    color: black;
+    font-size: 12pt;
+    font-weight: 800;
+    background-color: rgba(200, 255, 0, 0.237);
+    border:1px solid rgb(149, 255, 0);
+}
+
+::placeholder{
+    font-size: 12pt;
+    color:rgb(0, 0, 0) ;
+}
+
+.nav_contraseña{
+    margin-left: -30px;
+    color: rgb(255, 255, 255);
+    font-size: 16pt;
+    font-weight: 900;
+}
+
+.img_contraseña{
+    margin-top: -15px;
+    margin-left: 30px;
+}
+
+.nav_iptcontraseña{
+    color: black;
+    font-size: 12pt;
+    font-weight: 800;
+    background-color: rgba(200, 255, 0, 0.237);
+    border:1px solid rgb(149, 255, 0);
+}
+
+.btn_datos{
+    margin-top: 10px;
+    margin-left: -108px;
+}
+
+.nav_check{
+    color: yellow;
+}
+
+.btn_inicio{
+    margin-top: 10px;
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;	
+    text-decoration: none;
+    outline: none;
+    color: rgb(21, 0, 255);
+    font-weight: 800;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px rgb(0, 0, 0);
+}
+
+.btn_inicio:hover {background-color: #8a8a8a}
+
+.btn_inicio:active {
+    background-color: #ffffff;
+    box-shadow: 0 5px rgb(64, 64, 64);
+    transform: translateY(4px);
+}
+
+.btn_registro{       
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;	
+    text-decoration: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    font-weight: 800;
+    background-color: #0453f0;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px rgb(18, 18, 104);   
+}
+
+.btn_registro:hover {background-color: #5599c3}
+
+.btn_registro:active {
+    background-color: #51bcff;
+    box-shadow: 0 5px rgb(34, 93, 122);
+    transform: translateY(4px);
+}
+
+.btn_contraseña{   
+    margin-left: 30px;    
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;	
+    text-decoration: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    font-weight: 800;
+    background-color: #0453f0;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px rgb(18, 18, 104);    
+}
+
+.btn_contraseña:hover {background-color: #5599c3}
+
+.btn_contraseña:active {
+    background-color: #51bcff;
+    box-shadow: 0 5px rgb(34, 93, 122);
+    transform: translateY(4px);
+}
