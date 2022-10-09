@@ -17,7 +17,7 @@
         <div class="titulo">
             <h2 class="nav_titulo">Registro</h2>            
         </div>
-        <form action="/registro/save/" id="forregistro" name="formularioregistro" method="post"> 
+        <form action="{{ url_for('register_User') }}" id="forregistro" name="formularioregistro" method="post"> 
             <div class="registro">
                 <label class="nav_usuarior" for="usuarior">Nombre de usuario</label>
                 <img class="img_usuarior" src="{{ url_for('static', filename='images/iconoregistro.png')}}" alt="">
