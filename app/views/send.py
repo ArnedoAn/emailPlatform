@@ -21,3 +21,7 @@ def sendEmailUser():
         return "Inicia sesión!"
 
 
+@send.get('/send')
+def sendEmailRender():
+    return render_template('/inbox/enviar.html')
+

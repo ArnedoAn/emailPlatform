@@ -18,11 +18,11 @@
         <div class="titulo">
             <h1 class="nav_titulo">MENSAJERIA ELECTRONICA</h1>
         </div>
-        <form>
+        <form action="{{ url_for('loginPost') }}" id="login" name="login" method="POST">
             <div class="inicioSesion">
-                <label class="nav_usuario" for="usuario" >Usuario</label>
+                <label class="nav_usuario" for="correo" >Correo</label>
                 <img class="img_usuario" src="/static/images/iconousiario.png" alt=""><br>
-                <input class="nav_iptusuario" type="text" id="usuario" placeholder="UserName" ><br><br>                
+                <input class="nav_iptusuario" type="email" id="email" placeholder="Correo electronico" ><br><br>                
                 <label class="nav_contraseña" for="contrasenia">Contraseña</label>
                 <img class="img_contraseña" src="/static/images/iconocontraseña.png" alt=""><br>
                 <input class="nav_iptcontraseña" type="password" id="contrasenia" placeholder="Password"><br>

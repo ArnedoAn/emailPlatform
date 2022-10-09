@@ -1,4 +1,4 @@
-from flask import Blueprint, session
+from flask import Blueprint, session, render_template
 from app.controllers.dbController import inbox
 
 messages = Blueprint('messages', __name__, template_folder='templates')
@@ -9,7 +9,7 @@ def inboxUser():
         email = session["user"]
         data = inbox(email)
         if(data != None):
-            return "Plantilla", data
+            return render_template('/inbox/leer.html', data)
         else:
             return "Usuario invalido"
     else:
