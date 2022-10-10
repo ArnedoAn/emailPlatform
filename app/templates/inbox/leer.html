@@ -21,13 +21,13 @@
             <div class="leermensajes">
                 <div>
                 <label class="nav_mensajes" for="">Mensajes</label>                
-                <a class="nav_nuevo" href="#">Nuevo</a>
-                <a class="nav_nuevo" href="#">Actualizar</a>
+                <a class="nav_nuevo" onclick="nuevo()" href="#">Nuevo</a>
+                <a class="nav_actualizar" onclick="document.location.reload()" href="#">Actualizar</a>
                 </div>
-                
                 <p class="nav_piepagina">Mensajeria Electronica</p>
             </div>            
         </form>
-    </div>    
+    </div> 
+    <script src="{{ url_for('static', filename='js/index.js')}}"></script>          
 </body>
 </html>

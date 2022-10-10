@@ -3,6 +3,7 @@ from app.controllers.dbController import inbox
 
 messages = Blueprint('messages', __name__, template_folder='templates')
 
+
 @messages.get('/inbox')
 def inboxUser():
     if "user" in session:
@@ -13,4 +14,4 @@ def inboxUser():
         else:
             return "Usuario invalido"
     else:
-        return "Inicia sesión!"        
+        return "Inicia sesión!"  

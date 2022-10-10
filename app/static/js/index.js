@@ -13,3 +13,8 @@ function cambcontraseña(){
 function iniciosesion(){
     location.href = "/" 
 }
+
+function nuevo(){
+    location.href = "send"
+}
+

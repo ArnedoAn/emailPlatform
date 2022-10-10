@@ -17,18 +17,18 @@
         <div class="titulo">
             <h1 class="nav_titulo">Envia Mensaje</h1>
         </div>
-        <form>
+        <form action="{{ url_for('send.sendEmailUser') }}" id="sendmensaje" name="mensaje" method="post"> >
             <div class="enviarmensajes">
                 <label class="nav_nuevomensaje" for="">Nuevo mensaje</label><br>
-                <label class="nav_para" for="para">Para:</label><br>
-                <input class="ipt_para" type="text" id="para" placeholder="To">
+                <label class="nav_para" for="para" id="para" >Para:</label><br>
+                <input class="ipt_para" type="email" id="to_user" name="to_user" placeholder="To">
                 <img class="img_mensaje" src="{{ url_for('static', filename='images/iconomensaje.png')}}" alt="" srcset=""><br>
                 <label class="nav_asunto" for="asunto">Asunto:</label>
                 <label class="nav_usuario" for="">Usuario</label><br>
-                <input class="ipt_asunto" type="text" id="asunto" placeholder="Subject"><br>
+                <input class="ipt_asunto" type="text" id="asunto" name="asunto" placeholder="Subject"><br>
                 <label class="nav_mensaje" for="mensaje">Mensaje:</label><br>
-                <textarea class="nav_textarea"  id="mensaje" placeholder="Write your message" cols="30" rows="4"></textarea><br>
-                <input class="btn_enviar" type="button" value="Enviar"> 
+                <textarea class="nav_textarea"  id="mensaje" name="mensaje" placeholder="Write your message" cols="30" rows="4"></textarea><br>
+                <input class="btn_enviar" type="submit" value="Enviar"> 
                 <a class="nav_cerrarsesion" onclick="iniciosesion()" href="#">Cerrar Sesion</a><br><br>
                 <p class="nav_piepagina">Mensajeria Electronica</p>            
             </div>            

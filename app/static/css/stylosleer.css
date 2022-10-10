@@ -21,3 +21,17 @@ body{
     font-weight: 700;
 }
 
+.nav_mensajes{
+    color: rgb(255, 255, 255);
+    font-size: 15pt;
+    font-weight: 700;
+}
+
+.nav_nuevo{
+    margin-left: 100px;
+}
+.nav_actualizar{
+    margin-left: 20px;
+}
+
+
