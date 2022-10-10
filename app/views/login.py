@@ -1,4 +1,4 @@
-from flask import Blueprint, request, render_template, session
+from flask import Blueprint, request, render_template, session, redirect, flash, url_for
 from app.controllers.pwdController import validatePwd
 
 login = Blueprint('login',__name__, template_folder='templates')
@@ -15,10 +15,12 @@ def loginPost():
         session["user"] = email
         return render_template('/inbox/leer.html')
     else:
-        return "Error de autenticación!"    
+        flash("Error de autenticación!",'error')
+        return redirect(url_for("login.loginForm"))   
 
 
-@login.post('/logout')
+@login.get('/logout')
 def logout_user():
     session.clear()
-    return "Sesión cerrada!"             
+    flash('Sesión cerrada!','info')
+    return redirect(url_for('home'))             

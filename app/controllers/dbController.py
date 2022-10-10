@@ -56,11 +56,10 @@ def inbox(data):
 
 def sendMail(data):
     connection = init_db()
+    print(data)
     cursor = connection.cursor()
     try:
-        cursor.execute("INSERT INTO mensaje(to_User,from_user,Asunto,cuerpo,estado,fecha)" +
-                       " VALUES (?, ?, ?, ?, ?", [data["to_user"], data["from_user"],
-                                                  data["asunto"], data["cuerpo"], data["estado"], data["fecha"]])
+        cursor.execute("INSERT INTO mensaje(to_user,from_user,asunto,cuerpo,estado,fecha) VALUES (?, ?, ?, ?, ?, ?)",[data["to_user"], data["from_user"],data["asunto"],data["cuerpo"], data["estado"], data["fecha"]])
         connection.commit()
         connection.close()
         return True
