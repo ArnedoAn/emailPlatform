@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, flash, redirect, url_for
 from app.controllers.dbController import changePassword, login
 
 reset = Blueprint('reset', __name__, template_folder='templates')
@@ -16,7 +16,8 @@ def getLink():
     if(login(data) != False):
         return render_template('/auth/cambiocontraseña.html')
     else:
-        return "Correo no registrado!"
+        flash("Correo no registrado!", 'error')
+        return redirect(url_for("reset.sendLink"))
 
 
 @reset.post('/change')
@@ -25,6 +26,8 @@ def changePwd():
     data["email"] = request.form["email"]
     data["password"] = request.form["password"]
     if(changePassword(data)):
-        return "Contraseña cambiada!"
+        flash("Constraseña cambiada!",'message')
+        return redirect(url_for('home'))
     else:
-        return "Error al cambiar contraseña!"
+        flash("No se pudo cambiar la constraseña", 'error')
+        return redirect(url_for('home'))

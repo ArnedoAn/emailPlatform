@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, flash, url_for, redirect
 from flask_mail import Mail, Message
 from app.views.send import send
 from app.views.login import login
@@ -79,11 +79,14 @@ def register_User():
         data['password'] = makePwd(pwd)
         if(registerUser(data)):
             if(sendActivation(data['email'], data['token'])):
-                return 'Link de activación enviado!'
+                flash('Link de activación enviado!', 'message')
+                return redirect(url_for('home'))
             else:
-                return "Error al enviar link de activación"
+                flash('Error al enviar corre de activación!','error')
+                return redirect(url_for('home'))
         else:
-            return 'Template de mal registro'
+            flash("Verifique sus credenciales", 'error')
+            return redirect(url_for('register.registerForm'))
 
 
 @app.route('/reset', methods=["POST"])
@@ -91,6 +94,7 @@ def sendToChange():
     if request.method == "POST":
         email = request.form["email"]
         if(sendReset(email)):
-            return "Correo de recuperacion enviado"
+            return redirect(url_for('home'))
         else:
-            return "Error al enviar correo de recuperacion"
+            flash("Error al enviar correo de recuperacion",'error')
+            return redirect(url_for('reset.sendLink'))
