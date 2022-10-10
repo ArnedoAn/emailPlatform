@@ -1,4 +1,4 @@
-from flask import Blueprint, request, render_template
+from flask import Blueprint, request, render_template, redirect, url_for
 from app.controllers.dbController import activation
 
 
@@ -10,7 +10,7 @@ def activateUser():
     data["email"] = request.args.get('email')
     data["cod"] = request.args.get('cod')
     if(activation(data)):
-        return render_template('/inbox/leer.html')
+        return redirect(url_for("login.loginForm"))
     else:
         return "Proceso de activación incorrecto!"    
 

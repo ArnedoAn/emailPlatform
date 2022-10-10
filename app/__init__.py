@@ -72,8 +72,8 @@ def home():
 def register_User():
     if request.method == "POST":
         data = {}
-        data['email'] = request.form['correoelectronico']
-        data['username'] = request.form['usuarior']
+        data['username'] = request.form['usuarior']        
+        data['email'] = request.form['correoelectronico']        
         data['token'] = secrets.token_urlsafe()
         pwd = request.form['Contraseña']
         data['password'] = makePwd(pwd)

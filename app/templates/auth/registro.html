@@ -21,13 +21,13 @@
             <div class="registro">
                 <label class="nav_usuarior" for="usuarior">Nombre de usuario</label>
                 <img class="img_usuarior" src="{{ url_for('static', filename='images/iconoregistro.png')}}" alt="">
-                <input class="ipt_usuarior" type="text" id="usuarior" placeholder="User name"><br>
+                <input class="ipt_usuarior" type="text" id="usuarior" name="usuarior" placeholder="User name"><br>
                 <label class="nav_correoelectronico" for="correoelectronico">Correo electronico</label>
                 <img class="img_correoelectronico" src="{{ url_for('static', filename='images/iconocorreo.png')}}" alt="">
-                <input class="ipt_correoelectronico" type="email" id="correoelectronico" placeholder="Email adress"><br>
+                <input class="ipt_correoelectronico" type="email" id="correoelectronico" name="correoelectronico" placeholder="Email adress"><br>
                 <label class="nav_contraseña" for="Contraseña">Contraseña</label>
                 <img class="img_contraseña" src="{{ url_for('static', filename='images/iconocontraseña2.png')}}" alt=""><br>
-                <input class="ipt_contraseña" type="password" id="Contraseña" placeholder="Password"><br>
+                <input class="ipt_contraseña" type="password" id="Contraseña" name="Contraseña" placeholder="Password"><br>
                 <input class="btn_registro" type="submit" value="Registrarse"><br><br>                               
                 <a class="nav_Iniciosesion" onclick="iniciosesion()" href="#">Inicio Sesion</a><br>
                 <a class="nav_olvidocontraseña" onclick="contraseña()" href="#">Olvidaste tu contraseña?</a><br><br>
