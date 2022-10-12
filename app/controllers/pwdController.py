@@ -6,7 +6,7 @@ def makePwd(pwd):
 
 def validatePwd(user,pwd):
     data = {"email":user}
-    bdPwd = login(data)
+    bdPwd = login(user)
     if bdPwd != False:
         return check_password_hash(bdPwd[0],pwd)
     else:

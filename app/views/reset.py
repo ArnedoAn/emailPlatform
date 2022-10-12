@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session
 from app.controllers.dbController import changePassword, login
-
+from app.controllers.pwdController import makePwd
 reset = Blueprint('reset', __name__, template_folder='templates')
 
 
@@ -35,10 +35,11 @@ def changePwd():
     if (data["password"] != data["pw1"]):
         flash("Las contraseñas no coinciden", 'message')
         return redirect(url_for('reset.getLink'))
+    data["password"] = makePwd(data["password"])
     if(changePassword(data)):
         session.clear()
         flash("Constraseña cambiada!", 'message')
-        return redirect(url_for('login.loginform'))
+        return redirect(url_for('login.loginForm'))
     else:
         session.clear()
         flash("No se pudo cambiar la constraseña", 'error')

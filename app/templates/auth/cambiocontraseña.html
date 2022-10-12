@@ -24,7 +24,7 @@
         <div class="titulo">
             <h3 class="nav_titulo">Cambia Tu Contraseña</h3>
         </div>
-        <form action="{{ url_for('changePwd') }}" id="recuperar" name="recuperar" method="post">
+        <form action="{{ url_for('reset.changePwd') }}" id="recuperar" name="recuperar" method="post">
             <div class="contraseña">    
                 <img class="img_cambcontraseña" src="{{ url_for('static', filename='images/iconocambio.png')}}" alt=""><br>
                 <label class="nav_subtitulo" for="cambcontraseñar">Escribe tu nueva contraseña</label><br>

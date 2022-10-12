@@ -51,8 +51,14 @@ body{
 }
 
 .nav_de{
+    margin-top: 2px;
     font-size: 10pt;
     color: rgb(13, 25, 194);
+    border-radius: 5px;
+    border-top: 2px solid rgb(0, 111, 247);
+    border-left: 2px solid rgb(0, 111, 247);
+    border-right: 2px solid rgb(0, 111, 247);
+    border-bottom: 2px solid rgb(0, 111, 247);
 }
 .nav_m{
     color: black;
@@ -60,11 +66,13 @@ body{
 }
 
 .nav_message{
-    background-color: rgba(19, 18, 18, 0.677);
+    background-color: rgba(200, 255, 0, 0.42);
     font-size: 11pt;
     color: rgb(255, 255, 255);
     font-weight: 600;
+
 }
+
 
 .nav_piepagina{
     text-align: center;

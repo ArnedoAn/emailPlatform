@@ -40,9 +40,10 @@ def login(data):
     connection = init_db()
     cursor = connection.cursor()
     try:
-        cursor.execute("SELECT * FROM usuario WHERE email = ?", [data])
-        print(cursor)
+        cursor.execute("SELECT password FROM usuario WHERE email = ?", [data])
+        
         pwd = cursor.fetchone()
+        print(pwd)
         return pwd
     except Exception as ex:
         print(ex)
