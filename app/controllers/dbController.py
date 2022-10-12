@@ -1,9 +1,7 @@
-from multiprocessing import connection
 import sqlite3
-from sqlite3 import Error
 
 def init_db():
-    connection = sqlite3.connect('./app/emaildb.db')
+    connection = sqlite3.connect('.\\app\\emaildb.db')
     #connection.row_factory = sqlite3.Row()
     return connection
 

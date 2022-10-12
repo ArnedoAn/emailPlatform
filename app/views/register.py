@@ -1,6 +1,6 @@
 from flask import Blueprint, request, redirect, render_template
-from app.controllers.dbController import registerUser
-from app.controllers.pwdController import makePwd
+from controllers.dbController import registerUser
+from controllers.pwdController import makePwd
 # from app.controllers.emailController import sendActivation
 import secrets
 

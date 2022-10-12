@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, session, flash, redirect, url_for
-from app.controllers.dbController import sendMail
+from controllers.dbController import sendMail
 import time
 
 send = Blueprint('send', __name__, template_folder='templates')

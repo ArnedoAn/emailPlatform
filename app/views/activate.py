@@ -1,5 +1,5 @@
 from flask import Blueprint, request, redirect, url_for, flash
-from app.controllers.dbController import activation
+from controllers.dbController import activation
 
 
 activate = Blueprint('activate', __name__, template_folder='templates')

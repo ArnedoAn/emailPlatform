@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session
-from app.controllers.dbController import changePassword, login
-from app.controllers.pwdController import makePwd
+from controllers.dbController import changePassword, login
+from controllers.pwdController import makePwd
 reset = Blueprint('reset', __name__, template_folder='templates')
 
 
