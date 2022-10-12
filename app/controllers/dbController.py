@@ -1,7 +1,7 @@
 import sqlite3
 
 def init_db():
-    connection = sqlite3.connect('.\\app\\emaildb.db')
+    connection = sqlite3.connect('./emaildb.db')
     #connection.row_factory = sqlite3.Row()
     return connection
 
@@ -51,7 +51,7 @@ def login(data):
 def inbox(data):
     connection = init_db()
     cursor = connection.cursor()
-    cursor.execute("SELECT * FROM mensaje WHERE from_user = ?", [data] )
+    cursor.execute("SELECT * FROM mensaje WHERE to_user = ?", [data] )
     return cursor.fetchall()
 
     
