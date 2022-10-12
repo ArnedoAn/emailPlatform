@@ -1,4 +1,4 @@
-from flask import Blueprint, Flask, render_template, request, flash, redirect, url_for, session
+from flask import Blueprint, render_template, request, flash, redirect, url_for, session
 from app.controllers.dbController import changePassword, login
 
 reset = Blueprint('reset', __name__, template_folder='templates')
@@ -11,28 +11,35 @@ def sendLink():
 
 @reset.get('/change')
 def getLink():
-    
-    data = request.args.get('email')
+    data = None
+
+    if "emailreset" in session:
+        data = session["emailreset"]
+    else:
+        data = request.args.get('email')
+
     if(login(data) != False):
         session["emailreset"] = data
         return render_template('/auth/cambiocontraseña.html')
-        
     else:
         flash("Correo no registrado!", 'error')
         return render_template('/auth/cambiocontraseña.html')
-        
+
 
 @reset.post('/change')
 def changePwd():
     data = {}
+    data["email"] = session["emailreset"]
     data["password"] = request.form["cambcontraseña"]
     data["pw1"] = request.form["confirmar"]
     if (data["password"] != data["pw1"]):
-        flash("Las contraseñas no coinciden",'message')
-        return render_template('/auth/cambiocontraseña.html')        
+        flash("Las contraseñas no coinciden", 'message')
+        return redirect(url_for('reset.getLink'))
     if(changePassword(data)):
-        flash("Constraseña cambiada!",'message')
+        session.clear()
+        flash("Constraseña cambiada!", 'message')
         return redirect(url_for('login.loginform'))
     else:
+        session.clear()
         flash("No se pudo cambiar la constraseña", 'error')
         return redirect(url_for('home'))
