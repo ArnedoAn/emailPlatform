@@ -13,7 +13,7 @@ def loginPost():
     pwd = request.form["contrasenia"]
     if(validatePwd(email,pwd)):
         session["user"] = email
-        return render_template('/inbox/leer.html')
+        return redirect(url_for("messages.inboxUser"))
     else:
         flash("Error de autenticación!",'error')
         return redirect(url_for("login.loginForm"))   
@@ -23,4 +23,4 @@ def loginPost():
 def logout_user():
     session.clear()
     flash('Sesión cerrada!','info')
-    return redirect(url_for('home'))             
+    return redirect(url_for("login.loginForm"))             

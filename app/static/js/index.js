@@ -6,10 +6,6 @@ function contraseña(){
     location.href = "reset"
 }
 
-function cambcontraseña(){
-    location.href = "cambiocontraseña"
-}
-
 function iniciosesion(){
     location.href = "/" 
 }
@@ -18,3 +14,10 @@ function nuevo(){
     location.href = "send"
 }
 
+function leermensaje(){
+    location.href = "inbox"
+}
+
+function cerrarsesion(){
+    location.href = "logout"
+}

@@ -1,4 +1,6 @@
+from multiprocessing import connection
 import sqlite3
+from sqlite3 import Error
 
 def init_db():
     connection = sqlite3.connect('./app/emaildb.db')
@@ -38,8 +40,8 @@ def login(data):
     connection = init_db()
     cursor = connection.cursor()
     try:
-        cursor.execute(
-            "SELECT password FROM usuario WHERE email = ?", [data['email']])
+        cursor.execute("SELECT * FROM usuario WHERE email = ?", [data])
+        print(cursor)
         pwd = cursor.fetchone()
         return pwd
     except Exception as ex:
@@ -50,10 +52,10 @@ def login(data):
 def inbox(data):
     connection = init_db()
     cursor = connection.cursor()
-    cursor.execute("SELECT * FROM mensaje WHERE to_User = ?", [data])
-    return cursor.fetchall
+    cursor.execute("SELECT * FROM mensaje WHERE from_user = ?", [data] )
+    return cursor.fetchall()
 
-
+    
 def sendMail(data):
     connection = init_db()
     print(data)

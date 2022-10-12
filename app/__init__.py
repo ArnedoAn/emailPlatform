@@ -54,7 +54,7 @@ def sendReset(emailTo):
     email = "aarnedoe@uninorte.edu.co"
     try:
         msg = Message('CAMBIO DE CONTRASEÑA',
-                      sender=email, recipients=[emailTo])
+        sender=email, recipients=[emailTo])
         msg.body = f"Cambia tu contraseña mediante este link {link}"
         mail.send(msg)
         return True
@@ -80,10 +80,10 @@ def register_User():
         if(registerUser(data)):
             if(sendActivation(data['email'], data['token'])):
                 flash('Link de activación enviado!', 'message')
-                return redirect(url_for('home'))
+                return redirect(url_for('login.loginform'))
             else:
                 flash('Error al enviar corre de activación!','error')
-                return redirect(url_for('home'))
+                return redirect(url_for('register.registerForm'))
         else:
             flash("Verifique sus credenciales", 'error')
             return redirect(url_for('register.registerForm'))

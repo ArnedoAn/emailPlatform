@@ -24,12 +24,12 @@
         <div class="titulo">
             <h3 class="nav_titulo">Recuperar Contraseña</h3>
         </div>
-        <form >
+        <form action="{{ url_for('sendToChange') }}" id="recuperar" name="recuperar" method="post">
             <div class="contraseña">
                 <img class="img_contraseña" src="{{ url_for('static', filename='images/iconorecuperar.png')}}" alt=""><br>
                 <label class="nav_subtitulo" for="contraseñar">Escribe tu correo electronico</label><br><br>
-                <input class="nav_iptcorreo" type="email" id="contraseñar" placeholder="emailadress" ><br>
-                <input class="btn_recuperar" type="button" value="Recuperar"><br><br>
+                <input class="nav_iptcorreo" type="email" id="email" name="email" placeholder="emailadress" ><br>
+                <input class="btn_recuperar" type="submit" value="Recuperar"><br><br>
                 <a class="nav_Iniciosesion" onclick="iniciosesion()" href="#">Inicio Sesion</a><br>
                 <a class="nav_olvidocontraseña" onclick="registro()" href="#">Registro</a><br><br>               
                 <p class="nav_piepagina">Mensajeria Electronica</p>

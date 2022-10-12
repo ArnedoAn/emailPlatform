@@ -5,6 +5,7 @@ import time
 send = Blueprint('send', __name__, template_folder='templates')
 
 
+
 @send.post('/send')
 def sendEmailUser():
     if "user" in session:
@@ -16,7 +17,7 @@ def sendEmailUser():
         data["estado"] = "no leido"
         data["fecha"] = time.strftime("%c")
         if(sendMail(data)):
-            return "Enviado!"
+            return redirect(url_for("messages.inboxUser"))
         else:
             flash("Error al enviar correo!", 'error')
             return redirect(url_for('send.sendEmailRender'))

@@ -24,14 +24,14 @@
         <div class="titulo">
             <h3 class="nav_titulo">Cambia Tu Contraseña</h3>
         </div>
-        <form >
+        <form action="{{ url_for('changePwd') }}" id="recuperar" name="recuperar" method="post">
             <div class="contraseña">    
                 <img class="img_cambcontraseña" src="{{ url_for('static', filename='images/iconocambio.png')}}" alt=""><br>
                 <label class="nav_subtitulo" for="cambcontraseñar">Escribe tu nueva contraseña</label><br>
-                <input class="nav_iptcambcontraseña" type="password" id="cambcontraseña" placeholder="newpassword" ><br><br>
+                <input class="nav_iptcambcontraseña" type="password" id="cambcontraseña" name="cambcontraseña" placeholder="newpassword" ><br><br>
                 <label class="nav_confirmar" for="confirmar">Confirma tu contraseña</label>
-                <input class="nav_iptconfirmar" type="password" id="confirmar" placeholder="confirm your password"><br>
-                <input class="btn_cambiar" type="button" value="Aceptar"><br><br>
+                <input class="nav_iptconfirmar" type="password" id="confirmar" name="confirmar" placeholder="confirm your password"><br>
+                <input class="btn_cambiar" type="submit" value="Aceptar"><br><br>
                 <a class="nav_Iniciosesion" onclick="iniciosesion()" href="#">Inicio Sesion</a><br>
                 <a class="nav_cambcontraseña" onclick="registro()" href="#">Registro</a><br><br>              
                 <p class="nav_piepagina">Mensajeria Electronica</p>

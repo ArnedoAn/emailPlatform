@@ -33,5 +33,46 @@ body{
 .nav_actualizar{
     margin-left: 20px;
 }
+.nav_cerrarsesion{
+    margin-top: 70px;
+    margin-left: 125px;
+}
 
+.ipt{
+    margin-top: 10px;
+    width: 335px;
+    height: 250px;
+    background-color: rgba(200, 255, 0, 0.237);
+    overflow: auto;
+    border-top: 2px solid rgb(0, 0, 0);
+    border-left: 2px solid rgb(0, 0, 0);
+    border-right: 2px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
 
+.nav_de{
+    font-size: 10pt;
+    color: rgb(13, 25, 194);
+}
+.nav_m{
+    color: black;
+    font-size: 10pt;
+}
+
+.nav_message{
+    background-color: rgba(19, 18, 18, 0.677);
+    font-size: 11pt;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+.nav_piepagina{
+    text-align: center;
+    color: rgb(200, 255, 0);
+    font-weight: 700;
+}
+
+.labelm{
+    color: black;
+    font-weight: 500;
+}

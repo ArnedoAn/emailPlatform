@@ -24,15 +24,36 @@
         <div class="titulo">
             <h1 class="nav_titulo">Leer Mensajes</h1>
         </div>
-        <form>
+        <form action="{{ url_for('send.sendEmailUser') }}" id="leermensaje" name="leermensaje" method="get"> 
             <div class="leermensajes">
                 <div>
-                <label class="nav_mensajes" for="">Mensajes</label>                
-                <a class="nav_nuevo" onclick="nuevo()" href="#">Nuevo</a>
-                <a class="nav_actualizar" onclick="document.location.reload()" href="#">Actualizar</a>
+                    <label class="nav_mensajes" for="">Mensajes</label>                
+                    <a class="nav_nuevo" type="submit" onclick="nuevo()" href="#">Nuevo</a>
+                    <a class="nav_actualizar" onclick="document.location.reload()" href="#">Actualizar</a><br>                 
                 </div>
-                <p class="nav_piepagina">Mensajeria Electronica</p>
-            </div>            
+                    <div class="ipt">
+                        {% for n in data%}
+                        <div class="nav_de">
+                            <label class="labelm">De:</label>
+                            <h7>{{n[2]}}</h7>
+                            <label class="labelm">Asunto:</label>
+                            <h7>{{n[3]}}</h7><br>
+                            <label class="labelm">Para:</label>
+                            <h7>{{n[1]}}</h7>
+                        </div>
+                        <div>
+                            <div class="nav_message"> 
+                                <label class="nav_m">Mensaje:</label>   
+                                <h7>{{n[4]}}</h7>
+                            </div>
+                        </div>
+                        {% endfor %}                        
+                    </div><br>
+                    <a class="nav_cerrarsesion" onclick="cerrarsesion()" href="#">Cerrar Sesion</a><br>
+                    <p class="nav_piepagina">Mensajeria Electronica</p> 
+                </div>
+                
+            </div>                          
         </form>
     </div> 
     <script src="{{ url_for('static', filename='js/index.js')}}"></script>          
