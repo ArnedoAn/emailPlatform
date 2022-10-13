@@ -48,6 +48,17 @@ def login(data):
         print(ex)
         return False
 
+def isActivated(data):
+    connection = init_db()
+    cursor = connection.cursor()
+    try:
+        cursor.execute("SELECT estado FROM usuario WHERE email = ?", [data])
+        estado = cursor.fetchone()
+        return estado
+    except Exception as ex:
+        print(ex)
+        return False
+
 
 def inbox(data):
     connection = init_db()

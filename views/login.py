@@ -1,5 +1,6 @@
 from flask import Blueprint, request, render_template, session, redirect, flash, url_for
 from controllers.pwdController import validatePwd
+from controllers.dbController import isActivated
 
 login = Blueprint('login',__name__, template_folder='templates')
 
@@ -11,6 +12,11 @@ def loginForm():
 def loginPost():
     email = request.form["email"]
     pwd = request.form["contrasenia"]
+    estado = isActivated(email)
+    print(estado)
+    if(estado==None or estado[0]!="activado"):
+        flash("Usuario no activado o no existe!",'error')
+        return redirect(url_for("login.loginForm"))
     if(validatePwd(email,pwd)):
         session["user"] = email
         return redirect(url_for("messages.inboxUser"))
