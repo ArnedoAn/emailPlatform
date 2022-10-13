@@ -15,7 +15,7 @@ def loginPost():
         session["user"] = email
         return redirect(url_for("messages.inboxUser"))
     else:
-        flash("Error de autenticación!",'error')
+        flash("Verifica tus credenciales!",'error')
         return redirect(url_for("login.loginForm"))   
 
 

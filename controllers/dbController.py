@@ -41,7 +41,6 @@ def login(data):
     cursor = connection.cursor()
     try:
         cursor.execute("SELECT password FROM usuario WHERE email = ?", [data])
-        
         pwd = cursor.fetchone()
         print(pwd)
         return pwd

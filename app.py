@@ -35,7 +35,7 @@ mail = Mail(app)
 
 
 def sendActivation(emailTo, cod):
-    host = "http://127.0.0.1:5000"
+    host = "https://emailscol.herokuapp.com"
     link = host + f"/activate?email={emailTo}&cod={cod}"
     email = "aarnedoe@uninorte.edu.co"
     try:
@@ -49,7 +49,7 @@ def sendActivation(emailTo, cod):
 
 
 def sendReset(emailTo):
-    host = "http://127.0.0.1:5000"
+    host = "https://emailscol.herokuapp.com"
     link = host + f"/change?email={emailTo}"
     email = "aarnedoe@uninorte.edu.co"
     try:

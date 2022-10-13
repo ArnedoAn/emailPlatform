@@ -5,9 +5,9 @@ def makePwd(pwd):
     return generate_password_hash(pwd)
 
 def validatePwd(user,pwd):
-    data = {"email":user}
     bdPwd = login(user)
-    if bdPwd != False:
+    print(bdPwd)
+    if bdPwd != None:
         return check_password_hash(bdPwd[0],pwd)
     else:
         print("Error en validar contraseña")
