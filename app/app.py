@@ -1,13 +1,13 @@
 from flask import Flask, request, render_template, flash, url_for, redirect
 from flask_mail import Mail, Message
-from app.views.send import send
-from app.views.login import login
-from app.views.register import register
-from app.views.activate import activate
-from app.views.reset import reset
-from app.views.messages import messages
-from app.controllers.dbController import getSenderParams, registerUser
-from app.controllers.pwdController import makePwd
+from views.send import send
+from views.login import login
+from views.register import register
+from views.activate import activate
+from views.reset import reset
+from views.messages import messages
+from controllers.dbController import getSenderParams, registerUser
+from controllers.pwdController import makePwd
 import secrets
 
 app = Flask(__name__)

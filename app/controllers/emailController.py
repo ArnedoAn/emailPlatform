@@ -1,6 +1,6 @@
 from flask_mail import Message, Mail
 from flask import current_app, Flask
-from app.controllers.dbController import getSenderParams
+from controllers.dbController import getSenderParams
 
 app = Flask(__name__)
 appx = app.app_context()

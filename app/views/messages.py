@@ -1,5 +1,5 @@
 from flask import Blueprint, session, render_template, flash, redirect, url_for
-from app.controllers.dbController import inbox
+from controllers.dbController import inbox
 
 messages = Blueprint('messages', __name__, template_folder='templates')
 
